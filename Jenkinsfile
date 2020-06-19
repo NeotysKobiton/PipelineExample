@@ -10,7 +10,7 @@ pipeline {
     DOCKER_COMPOSE_TEMPLATE="$WORKSPACE/neoload/infrastructure/docker-compose.template"
     DOCKER_COMPOSE_LG_FILE = "$WORKSPACE/neoload/infrastructure/docker-compose-neoload.yml"
     KOBITONJARPATH="$WORKSPACE/target/sampleproject-0.0.1-SNAPSHOT.jar"
-    HOST="ec2-3-23-98-12.us-east-2.compute.amazonaws.com"
+    HOST="ec2-34-243-201-159.eu-west-1.compute.amazonaws.com"
     PORT="8780"
     APPLICATIONNAME="${HOST}:${PORT}"
     KOBITONCLOUDNAME="${env.cloudname}"
