@@ -6,7 +6,7 @@ pipeline {
   environment {
     VERSION="0.1"
     NL_API_TOKEN="${env.NL_WEB_API_KEY}"
-    ZONE="${env.nlwebZONE}"
+        ZONE="${env.nlwebZONE}"
     DOCKER_COMPOSE_TEMPLATE="$WORKSPACE/neoload/infrastructure/docker-compose.template"
     DOCKER_COMPOSE_LG_FILE = "$WORKSPACE/neoload/infrastructure/docker-compose-neoload.yml"
     KOBITONJARPATH="$WORKSPACE/target/sampleproject-0.0.1-SNAPSHOT.jar"
@@ -19,8 +19,8 @@ pipeline {
     ARGUMENT="-Dnl.selenium.proxy.mode=EndUserExperience"
     CONTROLLER="docker-ctl1"
 
-    GROUP="NeotysPerfectoDeque"
-    APP_NAME="Sample_NeotysPerfectoDeque"
+    GROUP="NeotysKobiton"
+    APP_NAME="Sample_NeotysKobiton"
   }
   stages {
      stage('Checkout') {
