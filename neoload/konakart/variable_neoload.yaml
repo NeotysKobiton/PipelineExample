@@ -1,0 +1,24 @@
+name: Perfecto_webinar_neoload
+variables:
+- constant:
+    name: KobitonJar
+    value: JAR_TO_REPLACE
+- constant:
+    name: server
+    value: HOST_TO_REPLACE
+- constant:
+    name: port
+    value: PORT_TO_REPLACE
+- constant:
+    name: argument
+    value: ARGUMENT_TO_REPLACE
+- constant:
+    name: applicationURL
+    value: TOKEN_TO_REPLACE
+- constant:
+    name: cloudname
+    value: CLOUD_TO_REPLACE
+- constant:
+      name: ControllerIp
+      value: IP_TO_REPLACE
+
