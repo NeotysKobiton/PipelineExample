@@ -6,7 +6,7 @@ pipeline {
   environment {
     VERSION="0.1"
     NL_API_TOKEN="${env.NL_WEB_API_KEY}"
-        ZONE="${env.nlwebZONE}"
+    ZONE="${env.nlwebZONE}"
     DOCKER_COMPOSE_TEMPLATE="$WORKSPACE/neoload/infrastructure/docker-compose.template"
     DOCKER_COMPOSE_LG_FILE = "$WORKSPACE/neoload/infrastructure/docker-compose-neoload.yml"
     KOBITONJARPATH="$WORKSPACE/target/sampleproject-0.0.1-SNAPSHOT.jar"
@@ -91,6 +91,7 @@ pipeline {
                               sh "sed -i 's/CLOUD_TO_REPLACE/${KOBITONCLOUDNAME}/'  $WORKSPACE/neoload/konakart/variable_neoload.yaml"
 
                               sh """
+                                     export PATH=~/.local/bin:$PATH
                                      neoload \
                                      login --url ${NLAPI} ${NL_API_TOKEN} \
                                      test-settings create KobitonWebinar \
