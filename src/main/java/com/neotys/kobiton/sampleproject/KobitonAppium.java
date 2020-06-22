@@ -7,6 +7,8 @@ import java.util.List;
 
 import com.neotys.selenium.proxies.NLRemoteWebDriver;
 import com.neotys.selenium.proxies.NLWebDriverFactory;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
@@ -27,7 +29,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import io.appium.java_client.AppiumDriver;
 
 public class KobitonAppium {
-	RemoteWebDriver wd;
+	AppiumDriver<MobileElement> wd;
 	NLRemoteWebDriver driver;
 	String openSearch = "//*[@id=\'open-search\']//*[@id=\'open-search\']|//*[@class=\'page-content\']//*[@class=\'search-field\']";
 	String searchField = "//*[@id=\'search-input-mobile\']";
@@ -57,7 +59,7 @@ public class KobitonAppium {
 		capabilities.setCapability("deviceName", "Galaxy*");
 		capabilities.setCapability("platformName", "Android");
 		try{
-			wd = (RemoteWebDriver)(new AppiumDriver<>(new URL("https://" + Utils.fetchCloudName(cloudName)  + "@api.kobiton.com/wd/hub"), capabilities));
+			wd = new AndroidDriver<MobileElement>(new URL("https://" + Utils.fetchCloudName(cloudName)  + "@api.kobiton.com/wd/hub"), capabilities);
 			driver = (NLRemoteWebDriver) NLWebDriverFactory.newNLWebDriver(wd, "KonaKart Android", projectPath);
 
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
