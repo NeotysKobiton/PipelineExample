@@ -20,7 +20,7 @@ pipeline {
     CONTROLLER="docker-ctl1"
 
     GROUP="NeotysKobiton"
-    APP_NAME="Sample_NeotysKobiton"
+    APP_NAME="PipelineExample"
   }
   stages {
      stage('Checkout') {

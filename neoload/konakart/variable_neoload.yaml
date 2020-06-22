@@ -19,6 +19,6 @@ variables:
     name: cloudname
     value: CLOUD_TO_REPLACE
 - constant:
-      name: ControllerIp
-      value: IP_TO_REPLACE
+    name: ControllerIp
+    value: IP_TO_REPLACE
 
