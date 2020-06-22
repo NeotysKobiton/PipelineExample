@@ -86,14 +86,14 @@ public class KobitonAppium {
 		driver.get("http://"+applicationURL);
 		driver.stopTransaction();
 
-		driver.wait(1000);
+	//	driver.wait(1000);
 
 		driver.startTransaction("Search for Comptuer");
 		//WebDriverWait wait = new WebDriverWait(driver, 30);
 		//WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
 		driver.findElementByXPath(openSearch).click();
 //		element.click();
-		driver.wait(100);
+	//	driver.wait(100);
 		WebElement element=driver.findElementByXPath(searchField);
 	//	element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchField)));
 		element.clear();
@@ -104,7 +104,7 @@ public class KobitonAppium {
 		element.click();
 		driver.stopTransaction();
 
-		driver.wait(2500);
+	//	driver.wait(2500);
 
 		driver.startTransaction("Search for phone");
 		//element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
@@ -121,7 +121,7 @@ public class KobitonAppium {
 		element.click();
 		driver.stopTransaction();
 
-		driver.wait(2500);
+	//	driver.wait(2500);
 
 		driver.startTransaction("Search for game");
 		element=driver.findElementByXPath(openSearch);
