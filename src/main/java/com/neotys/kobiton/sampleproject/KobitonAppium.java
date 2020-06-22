@@ -31,7 +31,7 @@ import io.appium.java_client.AppiumDriver;
 public class KobitonAppium {
 	AppiumDriver<MobileElement> wd;
 	NLRemoteWebDriver driver;
-	String openSearch = "//*[@id=\'open-search\']//*[@id=\'open-search\']|//*[@class=\'page-content\']//*[@class=\'search-field\']";
+	String openSearch = "//*[@id=\'open-search\']";
 	String searchField = "//*[@id=\'search-input-mobile\']";
 	String searchSubmit = "//*[@id=\'search-button-mobile\']";
 
