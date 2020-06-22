@@ -108,7 +108,7 @@ pipeline {
                                    neoload run \
                                   --return-0 \
                                   --as-code variable_neoload.yaml \
-                                   PerfectoWebinar
+                                   KobitonWebinar
                                  """
                             }
                           }
