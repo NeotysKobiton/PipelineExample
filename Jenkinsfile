@@ -94,7 +94,7 @@ pipeline {
                                      export PATH=~/.local/bin:$PATH
                                      neoload \
                                      login --url ${NLAPI} ${NL_API_TOKEN} \
-                                     test-settings --scenario sanityScenariokonakart_load_webinar use KobitonWebinar \
+                                     test-settings  --zone $ZONE --scenario sanityScenariokonakart_load_webinar use KobitonWebinar \
                                      project --path $WORKSPACE/neoload/konakart/ upload
                                 """
                             }
