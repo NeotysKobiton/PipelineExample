@@ -144,6 +144,7 @@ public class KobitonAppium {
 		driver.executeScript("mobile:monitor:stop", parames);
 
 		driver.close();
+		driver.quit();
 	}
 
 
