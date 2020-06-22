@@ -30,7 +30,7 @@ import io.appium.java_client.AppiumDriver;
 
 public class KobitonAppium {
 	AppiumDriver<MobileElement> wd;
-	NLRemoteWebDriver driver;
+	NLRemoteWebDriver driver;//*[@id="search-button-mobile"]
 	String openSearch = "//*[@id=\'open-search\']";
 	String searchField = "//*[@id=\'search-input-mobile\']";
 	String searchSubmit = "//*[@id=\'search-button-mobile\']";
@@ -98,7 +98,7 @@ public class KobitonAppium {
 	//	element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchField)));
 		element.clear();
 
-		element.sendKeys("Comptuer");
+		element.sendKeys("book");
 		element=driver.findElement(By.xpath((searchSubmit)));
 		//element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
 		element.click();
