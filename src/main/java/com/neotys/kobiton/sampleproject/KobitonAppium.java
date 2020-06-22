@@ -94,12 +94,12 @@ public class KobitonAppium {
 		WebElement element=driver.findElement(By.xpath((openSearch)));
 		element.click();
 	//	driver.wait(100);
-		element=driver.findElement(By.xpath((searchField));
+		element=driver.findElement(By.xpath((searchField)));
 	//	element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchField)));
 		element.clear();
 
 		element.sendKeys("Comptuer");
-		element=driver.findElement(By.xpath((searchSubmit));
+		element=driver.findElement(By.xpath((searchSubmit)));
 		//element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
 		element.click();
 		driver.stopTransaction();
@@ -108,14 +108,14 @@ public class KobitonAppium {
 
 		driver.startTransaction("Search for phone");
 		//element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
-		element=driver.findElement(By.xpath((openSearch));
+		element=driver.findElement(By.xpath((openSearch)));
 		element.click();
 
-		element=driver.findElement(By.xpath((searchField));
+		element=driver.findElement(By.xpath((searchField)));
 //		element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchField)));
 		element.clear();
 		element.sendKeys("phone");
-		element=driver.findElement(By.xpath((searchSubmit));
+		element=driver.findElement(By.xpath((searchSubmit)));
 
 //		element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
 		element.click();
@@ -124,14 +124,14 @@ public class KobitonAppium {
 	//	driver.wait(2500);
 
 		driver.startTransaction("Search for game");
-		element=driver.findElement(By.xpath((openSearch));
+		element=driver.findElement(By.xpath((openSearch)));
 //		element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
 		element.click();
-		element=driver.findElement(By.xpath((searchField));
+		element=driver.findElement(By.xpath((searchField)));
 //		element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchField)));
 		element.clear();
 		element.sendKeys("game");
-		element=driver.findElement(By.xpath((searchSubmit));
+		element=driver.findElement(By.xpath((searchSubmit)));
 //		element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
 		element.click();
 		driver.stopTransaction();
