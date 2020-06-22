@@ -55,7 +55,6 @@ public class KobitonAppium {
 		capabilities.setCapability("captureScreenshots", true);
 		capabilities.setCapability("browserName", "chrome");
 // The given group is used for finding devices and the created session will be visible for all members within the group.
-		capabilities.setCapability("groupId", 212); // Group: Default Group
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("platformVersion", "9*");
 		try{
