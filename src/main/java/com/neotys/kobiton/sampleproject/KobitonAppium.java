@@ -56,7 +56,7 @@ public class KobitonAppium {
 		capabilities.setCapability("browserName", "chrome");
 // The given group is used for finding devices and the created session will be visible for all members within the group.
 		capabilities.setCapability("platformName", "Android");
-		capabilities.setCapability("platformVersion", "9*");
+		capabilities.setCapability("deviceName", "Galaxy.*");
 		try{
 			wd = new AndroidDriver<MobileElement>(new URL("https://" + Utils.fetchCloudName(cloudName)  + "@api.kobiton.com/wd/hub"), capabilities);
 			driver = (NLRemoteWebDriver) NLWebDriverFactory.newNLWebDriver(wd, "KonaKart Android", projectPath);
