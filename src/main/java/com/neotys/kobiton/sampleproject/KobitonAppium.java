@@ -17,6 +17,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
@@ -30,7 +31,7 @@ import io.appium.java_client.AppiumDriver;
 
 public class KobitonAppium {
 	AppiumDriver<MobileElement> wd;
-	NLRemoteWebDriver driver;//*[@id="search-button-mobile"]
+	NLRemoteWebDriver driver;
 	String openSearch = "//*[@id=\'open-search\']";
 	String searchField = "//*[@id=\'search-input-mobile\']";
 	String searchSubmit = "//*[@id=\'search-button-mobile\']";
@@ -86,12 +87,13 @@ public class KobitonAppium {
 		driver.get("http://"+applicationURL);
 		driver.stopTransaction();
 
+
 	//	driver.wait(1000);
 
 		driver.startTransaction("Search for Comptuer");
-		//WebDriverWait wait = new WebDriverWait(driver, 30);
-		//WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
-		WebElement element=driver.findElement(By.xpath((openSearch)));
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
+		//WebElement element=driver.findElement(By.xpath((openSearch)));
 		element.click();
 	//	driver.wait(100);
 		element=driver.findElement(By.xpath((searchField)));
