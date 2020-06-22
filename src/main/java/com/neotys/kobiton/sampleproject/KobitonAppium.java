@@ -143,6 +143,8 @@ public class KobitonAppium {
 		//----disable vitals
 		Map<String, Object> parames = new HashMap<>();
 		driver.executeScript("mobile:monitor:stop", parames);
+
+		driver.close();
 	}
 
 
