@@ -91,7 +91,6 @@ pipeline {
                               sh "sed -i 's/CLOUD_TO_REPLACE/${KOBITONCLOUDNAME}/'  $WORKSPACE/neoload/konakart/variable_neoload.yaml"
 
                               sh """
-                                     export PATH=~/.local/bin:$PATH
                                      neoload \
                                      login --url ${NLAPI} ${NL_API_TOKEN} \
                                      test-settings create KobitonWebinar \
