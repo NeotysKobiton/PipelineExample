@@ -88,54 +88,53 @@ public class KobitonAppium {
 		driver.get("http://"+applicationURL);
 		driver.stopTransaction();
 
-		Thread.sleep(1000);
-	//	driver.wait(1000);
 
 		driver.startTransaction("Search for Comptuer");
-		//WebDriverWait wait = new WebDriverWait(driver, 30);
-		//WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
 		WebElement element=driver.findElement(By.xpath((openSearch)));
 		element.click();
-	//	driver.wait(100);
-		element=driver.findElement(By.xpath((searchField)));
-	//	element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchField)));
-		element.clear();
 
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchField)));
+		element=driver.findElement(By.xpath((searchField)));
+		element.clear();
 		element.sendKeys("book");
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
 		element=driver.findElement(By.xpath((searchSubmit)));
-		//element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
 		element.click();
 		driver.stopTransaction();
 
-	//	driver.wait(2500);
 
 		driver.startTransaction("Search for phone");
-		//element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
 		element=driver.findElement(By.xpath((openSearch)));
 		element.click();
 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchField)));
 		element=driver.findElement(By.xpath((searchField)));
-//		element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchField)));
 		element.clear();
 		element.sendKeys("phone");
-		element=driver.findElement(By.xpath((searchSubmit)));
 
-//		element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
+		element=driver.findElement(By.xpath((searchSubmit)));
 		element.click();
 		driver.stopTransaction();
 
-	//	driver.wait(2500);
 
 		driver.startTransaction("Search for game");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
 		element=driver.findElement(By.xpath((openSearch)));
-//		element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
 		element.click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchField)));
 		element=driver.findElement(By.xpath((searchField)));
-//		element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchField)));
 		element.clear();
 		element.sendKeys("game");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
 		element=driver.findElement(By.xpath((searchSubmit)));
-//		element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
 		element.click();
 		driver.stopTransaction();
 
