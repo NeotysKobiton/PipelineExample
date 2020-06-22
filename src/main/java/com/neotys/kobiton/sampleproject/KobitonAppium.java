@@ -59,7 +59,7 @@ public class KobitonAppium {
 		capabilities.setCapability("deviceGroup", "KOBITON");
 		capabilities.setCapability("deviceName", "Galaxy*");
 		capabilities.setCapability("platformName", "Android");
-		capabilities.setCapability("platformVersion", "7*");
+		capabilities.setCapability("platformVersion", "10*");
 		try{
 			wd = new AndroidDriver<MobileElement>(new URL("https://" + Utils.fetchCloudName(cloudName)  + "@api.kobiton.com/wd/hub"), capabilities);
 			driver = (NLRemoteWebDriver) NLWebDriverFactory.newNLWebDriver(wd, "KonaKart Android", projectPath);
