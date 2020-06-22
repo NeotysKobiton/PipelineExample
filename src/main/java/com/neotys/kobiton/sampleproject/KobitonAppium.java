@@ -87,13 +87,13 @@ public class KobitonAppium {
 		driver.get("http://"+applicationURL);
 		driver.stopTransaction();
 
-
+		Thread.sleep(1000);
 	//	driver.wait(1000);
 
 		driver.startTransaction("Search for Comptuer");
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
-		//WebElement element=driver.findElement(By.xpath((openSearch)));
+		//WebDriverWait wait = new WebDriverWait(driver, 30);
+		//WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
+		WebElement element=driver.findElement(By.xpath((openSearch)));
 		element.click();
 	//	driver.wait(100);
 		element=driver.findElement(By.xpath((searchField)));
