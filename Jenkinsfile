@@ -81,7 +81,7 @@ pipeline {
                           steps {
                             withEnv(["HOME=${env.WORKSPACE}"]) {
                               sh "mkdir $WORKSPACE/neoload/konakart/custom-resources/"
-                              sh "cp ${PERFECTOJARPATH} $WORKSPACE/neoload/konakart/custom-resources/"
+                              sh "cp $WORKSPACE/target/${KOBITONJAR} $WORKSPACE/neoload/konakart/custom-resources/"
                               sh "sed -i 's/HOST_TO_REPLACE/${HOST}/'  $WORKSPACE/neoload/konakart/variable_neoload.yaml"
                               sh "sed -i 's/PORT_TO_REPLACE/${PORT}/'  $WORKSPACE/neoload/konakart/variable_neoload.yaml"
                               sh "sed -i 's/JAR_TO_REPLACE/${KOBITONJAR}/'  $WORKSPACE/neoload/konakart/variable_neoload.yaml"
