@@ -54,7 +54,7 @@ public class KobitonAppium {
 // The given group is used for finding devices and the created session will be visible for all members within the group.
 		capabilities.setCapability("groupId", 212); // Group: Default Group
 		capabilities.setCapability("deviceGroup", "KOBITON");
-		capabilities.setCapability("deviceName", "Galaxy.*");
+		capabilities.setCapability("deviceName", "Galaxy*");
 		capabilities.setCapability("platformName", "Android");
 		try{
 			wd = (RemoteWebDriver)(new AppiumDriver<>(new URL("https://" + Utils.fetchCloudName(cloudName)  + "@api.kobiton.com/wd/hub"), capabilities));
