@@ -94,7 +94,7 @@ pipeline {
                                      export PATH=~/.local/bin:$PATH
                                      neoload \
                                      login --url ${NLAPI} ${NL_API_TOKEN} \
-                                     test-settings use PerfectoWebinar \
+                                     test-settings create KobitonWebinar \
                                      project --path $WORKSPACE/neoload/konakart/ upload
                                 """
                             }
