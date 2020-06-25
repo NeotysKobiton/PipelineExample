@@ -10,11 +10,7 @@ import com.neotys.selenium.proxies.NLWebDriverFactory;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.Before;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.SessionNotCreatedException;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.OutputType;
+import org.openqa.selenium.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -60,16 +56,36 @@ public class KobitonAppium {
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("platformVersion", "*");
 		capabilities.setCapability("deviceName", "Galaxy*");
-		try{
-			wd = new AndroidDriver<MobileElement>(new URL("https://" + Utils.fetchCloudName(cloudName)  + "@api.kobiton.com/wd/hub"), capabilities);
-			driver = (NLRemoteWebDriver) NLWebDriverFactory.newNLWebDriver(wd, "KonaKart Android", projectPath);
-
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		}catch(SessionNotCreatedException e){
-			throw new RuntimeException("Driver not created with capabilities: " + capabilities.toString());
+		boolean session=false;
+		for(int i=0;i<5;i++)
+		{
+			try {
+				session=createSession(capabilities,cloudName,projectPath);
+				if(session)
+					break;
+			}
+			catch (SessionNotCreatedException e)
+			{
+				e.printStackTrace();
+			}
 		}
+		if(!session)
+			throw new RuntimeException("Driver not created with capabilities: " + capabilities.toString());
 
 
+
+	}
+
+	public boolean createSession(Capabilities capabilities, String cloudname,String projectname) throws Exception,SessionNotCreatedException {
+		boolean result=false;
+		wd = new AndroidDriver<MobileElement>(new URL("https://" + Utils.fetchCloudName(cloudname)  + "@api.kobiton.com/wd/hub"), capabilities);
+		driver = (NLRemoteWebDriver) NLWebDriverFactory.newNLWebDriver(wd, "KonaKart Android", projectname);
+
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
+		System.out.println("Session created, session id :"+driver.getSessionId());
+		result=true;
+		return result;
 	}
 
 	@Test @org.junit.Test
