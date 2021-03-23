@@ -95,17 +95,17 @@ public class KobitonAppium {
 		driver.startTransaction("Accessibility Assertion");
 
 
-		Map<String, Object> params = new HashMap<>();
+		/*Map<String, Object> params = new HashMap<>();
 		params.put("sources", "Device");
 		params.put("interval", 4);
-		driver.executeScript("mobile:monitor:start", params);
+		driver.executeScript("mobile:monitor:start", params);*/
 
 		driver.startTransaction("Navigate to Konakart.com");
 		driver.get("http://"+applicationURL);
 		driver.stopTransaction();
 
 
-		driver.startTransaction("Search for Comptuer");
+		driver.startTransaction("Search for Computer");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
 		WebElement element=driver.findElement(By.xpath((openSearch)));
@@ -155,9 +155,9 @@ public class KobitonAppium {
 		driver.stopTransaction();
 
 
-		//----disable vitals
+/*		//----disable vitals
 		Map<String, Object> parames = new HashMap<>();
-		driver.executeScript("mobile:monitor:stop", parames);
+		driver.executeScript("mobile:monitor:stop", parames);*/
 
 		driver.close();
 		driver.quit();
