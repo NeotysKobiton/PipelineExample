@@ -21,4 +21,10 @@ variables:
 - constant:
     name: ControllerIp
     value: IP_TO_REPLACE
-
+- file:
+    name: device
+    is_first_line_column_names: false
+    start_from_line: 1
+    delimiter: ";"
+    path: devices.csv
+    order: random
