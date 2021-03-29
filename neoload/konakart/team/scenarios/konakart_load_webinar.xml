@@ -82,6 +82,7 @@
     <!--****** END DEBUG POLICY ******-->
     <!--****** START VU STATES ******-->
     <!--****** END VU STATES ******-->
+    <!--****** START EXCLUSION FILTER ******-->
     <request-path-exclusion-filter isEnabled="false">
         <regexps>
             <regexp>.*\.jpg</regexp>
@@ -98,6 +99,10 @@
             <regexp>.*\.properties</regexp>
         </regexps>
     </request-path-exclusion-filter>
+    <!--****** END  EXCLUSION FILTER ******-->
+    <!--****** START DYNATRACE MONITORING ******-->
+    <dynatrace-monitoring/>
+    <!--****** END  DYNATRACE MONITORING ******-->
     <!--****** START TRACE VARIABLES ******-->
     <!--****** END TRACE VARIABLES ******-->
 </scenario>

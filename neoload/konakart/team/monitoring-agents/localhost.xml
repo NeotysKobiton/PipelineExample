@@ -1,24 +1,44 @@
 <me-host citrixSupport="false" loadWeight="1" sapSupport="false"
-    standalone="false" supportWANEmulation="false" uid="localhost" version="7.4.0;build=20200528-24">
+    standalone="false" supportWANEmulation="false" uid="localhost" version="7.6.0;build=20200928-41">
     <!--****** LG NETWORK INTERFACES ******-->
-    <lg-networkiface description="wlp2s0" enabled="false"
-        isLoopBack="false" name="wlp2s0">
+    <lg-networkiface description="en0" enabled="false"
+        isLoopBack="false" name="en0">
         <!--****** LG ADDRESSES ******-->
-        <lg-address enabled="false" hostname="192.168.1.81">
-            <ip value="192.168.1.81"/>
+        <lg-address enabled="false" hostname="10.0.0.7">
+            <ip value="10.0.0.7"/>
         </lg-address>
-        <lg-address enabled="false" hostname="fe80:0:0:0:688f:374b:4c3f:4d3a%wlp2s0">
-            <ip value="fe80:0:0:0:688f:374b:4c3f:4d3a%wlp2s0"/>
+        <lg-address enabled="false" hostname="fde6:4797:dd32:1:1c1:5c65:c3c8:9572%en0">
+            <ip value="fde6:4797:dd32:1:1c1:5c65:c3c8:9572%en0"/>
+        </lg-address>
+        <lg-address enabled="false" hostname="fde6:4797:dd32:1:299d:6fd4:8b8b:fb35%en0">
+            <ip value="fde6:4797:dd32:1:299d:6fd4:8b8b:fb35%en0"/>
+        </lg-address>
+        <lg-address enabled="false" hostname="fde6:4797:dd32:1:497:e857:435:8418%en0">
+            <ip value="fde6:4797:dd32:1:497:e857:435:8418%en0"/>
+        </lg-address>
+        <lg-address enabled="false" hostname="fe80:0:0:0:c12:240e:7ff:5ef3%en0">
+            <ip value="fe80:0:0:0:c12:240e:7ff:5ef3%en0"/>
         </lg-address>
         <!--****** END LG ADDRESSES ******-->
     </lg-networkiface>
-    <lg-networkiface description="lo" enabled="false" isLoopBack="true" name="lo">
+    <lg-networkiface description="en3" enabled="false"
+        isLoopBack="false" name="en3">
+        <!--****** LG ADDRESSES ******-->
+        <lg-address enabled="false" hostname="fe80:0:0:0:aede:48ff:fe00:1122%en3">
+            <ip value="fe80:0:0:0:aede:48ff:fe00:1122%en3"/>
+        </lg-address>
+        <!--****** END LG ADDRESSES ******-->
+    </lg-networkiface>
+    <lg-networkiface description="lo0" enabled="false" isLoopBack="true" name="lo0">
         <!--****** LG ADDRESSES ******-->
         <lg-address enabled="false" hostname="localhost">
             <ip value="127.0.0.1"/>
         </lg-address>
-        <lg-address enabled="false" hostname="0:0:0:0:0:0:0:1%lo">
-            <ip value="0:0:0:0:0:0:0:1%lo"/>
+        <lg-address enabled="false" hostname="0:0:0:0:0:0:0:1%lo0">
+            <ip value="0:0:0:0:0:0:0:1%lo0"/>
+        </lg-address>
+        <lg-address enabled="false" hostname="fe80:0:0:0:0:0:0:1%lo0">
+            <ip value="fe80:0:0:0:0:0:0:1%lo0"/>
         </lg-address>
         <!--****** END LG ADDRESSES ******-->
     </lg-networkiface>

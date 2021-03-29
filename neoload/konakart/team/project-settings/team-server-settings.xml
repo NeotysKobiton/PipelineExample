@@ -1,2 +1,3 @@
-<team-server-settings hostAddress="" port="8080" protocol="svn_http"
-    repository="" resourcesFolderName="%resources%" thirdParty="false"/>
+<team-server-settings hostAddress="cpv.dublin.partners.apps.neotys.com"
+    port="9090" protocol="git_http" repository="/"
+    resourcesFolderName="%resources%" thirdParty="true" tunnel=""/>

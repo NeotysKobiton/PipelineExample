@@ -14,6 +14,7 @@ pipeline {
     PORT="8780"
     APPLICATIONNAME="${HOST}:${PORT}"
     KOBITONCLOUDNAME="${env.cloudname}"
+    DEVICETYPE="Android"
     NLAPI="${env.neoload_web_API_URL}"
     KOBITONJAR="sampleproject-0.0.1-SNAPSHOT.jar"
     ARGUMENT="-Dnl.selenium.proxy.mode=EndUserExperience"
@@ -34,7 +35,7 @@ pipeline {
       steps {
 
 
-            sh "mvn -B clean package  -DapplicationURL=$APPLICATIONNAME -DcloudName=${KOBITONCLOUDNAME}"
+            sh "mvn -B clean package  -DapplicationURL=$APPLICATIONNAME -DcloudName=${KOBITONCLOUDNAME}" -DdeviceType="${DEVICETYPE}"
 
       }
     }

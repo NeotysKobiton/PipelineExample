@@ -44,6 +44,11 @@ public class KobitonAppium {
         String projectPath = "";
         applicationURL = "<<applicationURL>>";
         applicationURL = Utils.fetchApplicationURL(applicationURL);
+
+        /*String deviceName = "<<deviceName>>";
+        deviceName = Utils.fetchDeviceName(deviceName);*/
+        String deviceType = "<<deviceType>>";
+        deviceType = Utils.fetchDeviceType(deviceType);
         //A sample perfecto connect appium script to connect with a perfecto android device and perform addition validation in calculator app.
         String browserName = "mobileOS";
         DesiredCapabilities capabilities = new DesiredCapabilities(browserName, "", Platform.ANY);
@@ -51,13 +56,22 @@ public class KobitonAppium {
         capabilities.setCapability("sessionDescription", "");
         capabilities.setCapability("deviceOrientation", "portrait");
         capabilities.setCapability("captureScreenshots", true);
-        capabilities.setCapability("browserName", "chrome");
+        if (deviceType.equals("iOS")) {
+            capabilities.setCapability("browserName","safari");
+        } else {
+            capabilities.setCapability("browserName","chrome");
+        }
+        capabilities.setCapability("platformName",deviceType);
+        //capabilities.setCapability("browserName", "chrome");
+        //capabilities.setCapability("browserName", "safari");
         capabilities.setCapability("groupId", 212); // Group: Default Group
         capabilities.setCapability("deviceGroup", "KOBITON");
         // The given group is used for finding devices and the created session will be visible for all members within the group.
-        capabilities.setCapability("platformName", "Android");
+        //capabilities.setCapability("platformName", "Android");
+        //capabilities.setCapability("platformName", "iOS");
         capabilities.setCapability("platformVersion", "*");
-        capabilities.setCapability("deviceName", "Galaxy*");
+        //capabilities.setCapability("deviceName", "Galaxy*");
+        capabilities.setCapability("deviceName", "*");
         boolean session = false;
         for (int i = 0; i < 5; i++) {
             try {
