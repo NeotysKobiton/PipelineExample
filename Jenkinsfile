@@ -35,7 +35,7 @@ pipeline {
       steps {
 
 
-            sh "mvn -B clean package  -DapplicationURL=$APPLICATIONNAME -DcloudName=${KOBITONCLOUDNAME}" -DdeviceType="${DEVICETYPE}"
+            sh "mvn -B clean package  -DapplicationURL=$APPLICATIONNAME -DcloudName=${KOBITONCLOUDNAME} -DdeviceType=${DEVICETYPE}"
 
       }
     }
