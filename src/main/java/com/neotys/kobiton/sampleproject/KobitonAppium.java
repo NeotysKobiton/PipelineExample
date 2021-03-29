@@ -34,6 +34,8 @@ public class KobitonAppium {
     String searchSubmit = "//*[@id=\'search-button-mobile\']";
 
     String applicationURL = "";
+    String deviceType = "";
+
 
     @BeforeMethod
     @Before
@@ -47,7 +49,7 @@ public class KobitonAppium {
 
         /*String deviceName = "<<deviceName>>";
         deviceName = Utils.fetchDeviceName(deviceName);*/
-        String deviceType = "<<deviceType>>";
+        deviceType = "<<deviceType>>";
         deviceType = Utils.fetchDeviceType(deviceType);
         //A sample perfecto connect appium script to connect with a perfecto android device and perform addition validation in calculator app.
         String browserName = "mobileOS";
@@ -62,15 +64,10 @@ public class KobitonAppium {
             capabilities.setCapability("browserName","chrome");
         }
         capabilities.setCapability("platformName",deviceType);
-        //capabilities.setCapability("browserName", "chrome");
-        //capabilities.setCapability("browserName", "safari");
         capabilities.setCapability("groupId", 212); // Group: Default Group
         capabilities.setCapability("deviceGroup", "KOBITON");
         // The given group is used for finding devices and the created session will be visible for all members within the group.
-        //capabilities.setCapability("platformName", "Android");
-        //capabilities.setCapability("platformName", "iOS");
         capabilities.setCapability("platformVersion", "*");
-        //capabilities.setCapability("deviceName", "Galaxy*");
         capabilities.setCapability("deviceName", "*");
         boolean session = false;
         for (int i = 0; i < 5; i++) {
@@ -88,7 +85,7 @@ public class KobitonAppium {
     public boolean createSession(Capabilities capabilities, String cloudname, String projectname) throws Exception, SessionNotCreatedException {
         boolean result = false;
         wd = new AndroidDriver<MobileElement>(new URL("https://" + Utils.fetchCloudName(cloudname) + "@api.kobiton.com/wd/hub"), capabilities);
-        driver = (NLRemoteWebDriver) NLWebDriverFactory.newNLWebDriver(wd, "KonaKart Android", projectname);
+        driver = (NLRemoteWebDriver) NLWebDriverFactory.newNLWebDriver(wd, "KonaKart " + deviceType, projectname);
 
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
